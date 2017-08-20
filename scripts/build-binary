@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+exec docker run --name=sauna \
+    --rm \
+    --entrypoint="/sauna/scripts/binary-entrypoint.sh" \
+    -v $PWD:/sauna \
+    python:3.5-slim
